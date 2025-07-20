@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beto Cruz - Psicologia, Ciência do Comportamento e Saúde Mental</title>
+    <meta name="description" content="Site e portfólio de Beto Cruz, Mestre em Ciência do Comportamento pela UnB. Palestras e cursos sobre saúde mental, psicologia e desenvolvimento humano.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F5F1E9;
+            color: #343434;
+        }
+        /* Cores da paleta */
+        .bg-sage { background-color: #8A9A5B; }
+        .text-sage { color: #8A9A5B; }
+        .border-sage { border-color: #8A9A5B; }
+        .bg-terracotta { background-color: #D89468; }
+        .text-terracotta { color: #D89468; }
+        .bg-charcoal { background-color: #343434; }
+        .text-charcoal { color: #343434; }
+        .bg-beige { background-color: #F5F1E9; }
+        /* Acessibilidade: foco visível */
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid #8A9A5B;
+            outline-offset: 2px;
+        }
+        /* Contraste melhor para textos secundários */
+        .text-charcoal\/80, .text-charcoal\/90 {
+            color: #222 !important;
+        }
+        /* Botão com sombra e animação */
+        .btn-anim {
+            box-shadow: 0 2px 8px rgba(52,52,52,0.08);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn-anim:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 16px rgba(52,52,52,0.16);
+        }
+        .icon-check {
+            width: 1.25rem !important; /* 20px */
+            height: 1.25rem !important;
+            color: #8A9A5B !important;
+            min-width: 1.25rem;
+            min-height: 1.25rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Cabeçalho e Navegação -->
+    <header id="header" class="bg-beige/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-charcoal">betocruz</a>
+            <span class="ml-4 text-base font-medium text-sage hidden md:inline">Psicólogo | Mestre em Ciência do Comportamento | Professor Universitário</span>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#sobre" class="text-charcoal hover:text-sage transition-colors">Sobre</a>
+                <a href="#palestras" class="text-charcoal hover:text-sage transition-colors">Palestras</a>
+                <a href="#artigos" class="text-charcoal hover:text-sage transition-colors">Artigos</a>
+                <a href="#contato" class="bg-sage text-white px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu" class="text-charcoal"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-beige">
+            <a href="#sobre" class="block text-center py-3 px-6 text-charcoal hover:bg-sage/10">Sobre</a>
+            <a href="#palestras" class="block text-center py-3 px-6 text-charcoal hover:bg-sage/10">Palestras</a>
+            <a href="#artigos" class="block text-center py-3 px-6 text-charcoal hover:bg-sage/10">Artigos</a>
+            <a href="#contato" class="block text-center py-3 px-6 text-charcoal hover:bg-sage/10">Contato</a>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <main id="home">
+        <div class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 flex flex-col justify-center items-start">
+                <h1 class="text-4xl md:text-5xl font-bold text-charcoal leading-tight mb-2 md:mb-4">Ciência para Viver Melhor.</h1>
+                <span class="text-sage text-lg md:text-xl font-medium mb-2 md:mb-4">Psicólogo | Mestre em Ciência do Comportamento | Professor Universitário</span>
+                <span class="text-sage text-3xl md:text-4xl font-bold mb-6 md:mb-8 block">A Mente Humana, Traduzida para Você.</span>
+                <p class="text-lg text-charcoal/80 mb-8 max-w-xl">Palestras, cursos e workshops que unem Psicologia, Ciência do Comportamento e Saúde Integral para transformar indivíduos, escolas e empresas.</p>
+                <div class="flex gap-4 w-full md:w-auto">
+                    <a href="#palestras" class="bg-sage text-white px-6 py-3 rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity w-full md:w-auto text-center">Conheça as Palestras</a>
+                    <a href="#contato" class="border-2 border-charcoal text-charcoal px-6 py-3 rounded-lg text-lg font-semibold hover:bg-charcoal hover:text-white transition-colors w-full md:w-auto text-center">Entre em Contato</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center items-center mt-12 md:mt-0">
+                <img src="foto do beto.png" alt="Foto profissional de Beto Cruz" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-lg border-4 border-beige">
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal">Uma Trajetória Dedicada à Saúde Integral</h2>
+                <p class="mt-4 text-lg text-charcoal/80 max-w-3xl mx-auto">Minha missão é construir pontes entre o conhecimento científico e os desafios do dia a dia
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-charcoal/90 text-base leading-relaxed space-y-4">
+                    <p>A jornada de Beto Pereira da Cruz é uma busca constante pela compreensão mais completa do ser humano. Acreditando que mente e corpo são inseparáveis, sua trajetória profissional foi construída sobre três pilares complementares e poderosos.</p>
+                    <p>Tudo começou na <strong>Enfermagem</strong>, onde desenvolveu uma base sólida no cuidado e na visão sistêmica da saúde. A paixão pela subjetividade o levou à <strong>Psicologia</strong> e à prática clínica, mergulhando nas complexidades do comportamento e das emoções.</p>
+                    <p>Para unir a prática ao mais alto rigor científico, concluiu o <strong>Mestrado em Ciência do Comportamento na prestigiosa Universidade de Brasília (UnB)</strong>. Hoje, atua como <strong>Professor Universitário (UDF)</strong>, e como <strong>estudante de Medicina</strong>, continua sua missão de integrar saberes para oferecer as soluções mais completas em saúde mental.</p>
+                    <p class="font-semibold text-sage">Acima de tudo, é o pai da Ana Clara, o que o motiva diariamente a traduzir todo esse conhecimento em ferramentas que possam, de fato, melhorar a vida das pessoas.</p>
+                </div>
+                <div class="md:w-1/2 space-y-6">
+                    <div class="flex items-start p-6 bg-beige rounded-lg shadow-sm">
+                        <i data-lucide="brain-circuit" class="w-10 h-10 text-terracotta mr-4"></i>
+                        <div>
+                            <h3 class="font-bold text-xl text-charcoal">Psicologia & Ciência do Comportamento</h3>
+                            <p class="text-charcoal/80 mt-1">Mestrado pela UnB, garantindo uma abordagem baseada em evidências.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-6 bg-beige rounded-lg shadow-sm">
+                        <i data-lucide="heart-pulse" class="w-10 h-10 text-terracotta mr-4"></i>
+                        <div>
+                            <h3 class="font-bold text-xl text-charcoal">Enfermagem & Medicina</h3>
+                            <p class="text-charcoal/80 mt-1">Visão 360º da saúde, integrando o cuidado com a mente e o corpo.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-6 bg-beige rounded-lg shadow-sm">
+                        <i data-lucide="graduation-cap" class="w-10 h-10 text-terracotta mr-4"></i>
+                        <div>
+                            <h3 class="font-bold text-xl text-charcoal">Docência Universitária</h3>
+                            <p class="text-charcoal/80 mt-1">A arte de traduzir temas complexos em conteúdo didático e envolvente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Palestras -->
+    <section id="palestras" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal">Palestras e Workshops que Transformam</h2>
+                <p class="mt-4 text-lg text-charcoal/80 max-w-3xl mx-auto">Conteúdo aplicável para empresas, escolas e eventos. Leve a ciência do comportamento para sua equipe.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Palestra 1: Empresas -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1465101178521-c5249880d6b8?auto=format&fit=crop&w=600&q=80" alt="Ambiente corporativo saudável" class="w-full h-40 object-cover">
+                    <div class="p-6 flex-grow">
+                        <span class="text-sm font-semibold text-terracotta bg-terracotta/10 px-3 py-1 rounded-full">Para Empresas</span>
+                        <h3 class="font-bold text-2xl mt-4 text-charcoal">Saúde Mental e Produtividade</h3>
+                        <p class="mt-2 text-charcoal/80">Estratégias baseadas em ciência para reduzir o burnout, fortalecer a liderança e construir uma cultura de segurança psicológica que impulsiona resultados.</p>
+                        <ul class="mt-4 space-y-2 text-charcoal/90">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Gestão de Estresse e Prevenção ao Burnout</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Liderança Empática e Comunicação Assertiva</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Neurodiversidade no Ambiente de Trabalho</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-beige/50">
+                        <a href="#contato" class="font-semibold text-sage hover:underline btn-anim">Solicite uma Proposta &rarr;</a>
+                    </div>
+                </div>
+                <!-- Palestra 2: Escolas -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Ambiente escolar inclusivo" class="w-full h-40 object-cover">
+                    <div class="p-6 flex-grow">
+                        <span class="text-sm font-semibold text-terracotta bg-terracotta/10 px-3 py-1 rounded-full">Para Escolas</span>
+                        <h3 class="font-bold text-2xl mt-4 text-charcoal">Desenvolvimento na Comunidade Escolar</h3>
+                        <p class="mt-2 text-charcoal/80">Ferramentas para capacitar professores, apoiar alunos e fortalecer a parceria escola-família, criando um ambiente de aprendizagem mais saudável e inclusivo.</p>
+                        <ul class="mt-4 space-y-2 text-charcoal/90">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Inclusão na Prática: TDAH e Autismo</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Manejo de Comportamentos Desafiadores</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Saúde Mental do Educador</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-beige/50">
+                        <a href="#contato" class="font-semibold text-sage hover:underline btn-anim">Leve para sua Escola &rarr;</a>
+                    </div>
+                </div>
+                <!-- Palestra 3: Pais e Família -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80" alt="Família conectada e feliz" class="w-full h-40 object-cover">
+                    <div class="p-6 flex-grow">
+                        <span class="text-sm font-semibold text-terracotta bg-terracotta/10 px-3 py-1 rounded-full">Para Pais e Famílias</span>
+                        <h3 class="font-bold text-2xl mt-4 text-charcoal">Conexão Familiar</h3>
+                        <p class="mt-2 text-charcoal/80">Workshops que traduzem a psicologia do desenvolvimento em estratégias práticas para os desafios da parentalidade moderna, da infância à adolescência.</p>
+                         <ul class="mt-4 space-y-2 text-charcoal/90">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Disciplina Positiva e Comunicação</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Entendendo o Laudo: TDAH e Autismo</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="icon-check mr-2"></i>Lidando com Telas e Tecnologia</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-beige/50">
+                        <a href="#contato" class="font-semibold text-sage hover:underline btn-anim">Saiba Mais &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Bloco de formatos e informações práticas -->
+            <div class="mt-16 bg-beige/80 rounded-lg shadow p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-charcoal mb-4">Formatos e Informações Práticas</h3>
+                <ul class="list-disc pl-6 text-charcoal/90 space-y-2">
+                    <li><strong>Tipos de eventos:</strong> Palestra, Workshop, Roda de Conversa (presencial ou online)</li>
+                    <li><strong>Requisitos técnicos:</strong> Projetor, microfone, ambiente silencioso</li>
+                    <li><strong>Investimento:</strong> Sob consulta (solicite proposta personalizada)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Artigos/Blog -->
+    <section id="artigos" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal">Artigos e Reflexões</h2>
+                <p class="mt-4 text-lg text-charcoal/80 max-w-3xl mx-auto">Conhecimento compartilhado para aprofundar a compreensão sobre a mente e o comportamento.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Artigo 1 -->
+                <div class="bg-beige/50 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Imagem de cérebro representando TDAH" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-charcoal">O Cérebro TDAH: Mitos e Verdades</h3>
+                        <p class="mt-2 text-charcoal/80">Uma análise sobre como o Transtorno de Déficit de Atenção e Hiperatividade realmente funciona e como podemos criar estratégias eficazes...</p>
+                        <a href="artigo-tdah.html" target="_blank" rel="noopener" class="mt-4 inline-block font-semibold text-sage hover:underline">Ler Artigo Completo &rarr;</a>
+                    </div>
+                </div>
+                <!-- Artigo 2 -->
+                <div class="bg-beige/50 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Imagem representando burnout e estresse" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-charcoal">Burnout não é Frescura: Sinais e Prevenção</h3>
+                        <p class="mt-2 text-charcoal/80">Entenda os estágios do esgotamento profissional e aprenda técnicas práticas para proteger sua saúde mental no ambiente de trabalho...</p>
+                        <a href="artigo-burnout.html" target="_blank" rel="noopener" class="mt-4 inline-block font-semibold text-sage hover:underline">Ler Artigo Completo &rarr;</a>
+                    </div>
+                </div>
+                <!-- Artigo 3 -->
+                <div class="bg-beige/50 rounded-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Imagem de medicamentos representando psicofármacos" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-charcoal">Psicofármacos: O que Precisamos Saber?</h3>
+                        <p class="mt-2 text-charcoal/80">Desmistificando o uso de medicamentos na saúde mental. Uma conversa honesta sobre benefícios, riscos e o papel da terapia conjunta...</p>
+                        <a href="artigo-psicofarmacos.html" target="_blank" rel="noopener" class="mt-4 inline-block font-semibold text-sage hover:underline">Ler Artigo Completo &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="bg-sage text-white rounded-lg shadow-2xl p-8 md:p-12 lg:p-16">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold">Vamos Conversar?</h2>
+                        <p class="mt-4 text-lg text-white/80">Estou à disposição para entender seus desafios e desenhar uma solução que gere impacto real para sua equipe, escola ou evento. Envie uma mensagem e retornarei o mais breve possível.</p>
+                        <div class="mt-8 space-y-4">
+                            <a href="mailto:contato@betocruz.com.br" class="flex items-center text-lg hover:underline">
+                                <i data-lucide="mail" class="w-6 h-6 mr-3"></i>
+                                contato@betocruz.com.br
+                            </a>
+                             <a href="#" class="flex items-center text-lg hover:underline">
+                                <i data-lucide="linkedin" class="w-6 h-6 mr-3"></i>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="sr-only">Nome</label>
+                                <input type="text" id="name" name="name" placeholder="Seu nome" class="w-full p-3 rounded-lg bg-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Seu melhor email" class="w-full p-3 rounded-lg bg-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Sua mensagem..." class="w-full p-3 rounded-lg bg-white/20 placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-white text-sage font-bold py-3 px-6 rounded-lg text-lg hover:opacity-90 transition-opacity">Enviar Mensagem</button>
+                        </form>
+                         <p id="form-status" class="text-center mt-4"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Prova Social: Depoimentos e Clientes -->
+    <section id="depoimentos" class="py-20 bg-beige/80">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal">Depoimentos e Clientes</h2>
+                <p class="mt-4 text-lg text-charcoal/80 max-w-3xl mx-auto">Veja o que empresas e profissionais dizem sobre as palestras e workshops.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow p-6 flex flex-col justify-between">
+                    <p class="text-charcoal/90 italic">“A palestra foi transformadora para nossa equipe. Recomendo fortemente!”</p>
+                    <span class="mt-4 font-semibold text-sage">Maria Silva, RH - Escola ABC</span>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6 flex flex-col justify-between">
+                    <p class="text-charcoal/90 italic">“Conteúdo prático e inspirador. Mudou nossa visão sobre saúde mental.”</p>
+                    <span class="mt-4 font-semibold text-sage">João Pereira, Diretor - Empresa XYZ</span>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6 flex flex-col justify-between">
+                    <p class="text-charcoal/90 italic">“Excelente abordagem, linguagem acessível e muita empatia.”</p>
+                    <span class="mt-4 font-semibold text-sage">Ana Costa, Psicóloga</span>
+                </div>
+            </div>
+            <div class="mt-12 flex flex-wrap justify-center items-center gap-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_ABC.png" alt="Logo Escola ABC" class="h-12">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Logo_XYZ.png" alt="Logo Empresa XYZ" class="h-12">
+                <!-- Adicione mais logos conforme necessário -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-charcoal text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <a href="#" class="text-2xl font-bold">betocruz</a>
+            <nav class="mt-4 flex justify-center space-x-6">
+                <a href="#sobre" class="hover:underline">Sobre</a>
+                <a href="#palestras" class="hover:underline">Palestras</a>
+                <a href="#artigos" class="hover:underline">Artigos</a>
+                <a href="#contato" class="hover:underline">Contato</a>
+            </nav>
+            <p class="mt-6 text-white/60 text-sm">
+                &copy; 2025 Beto Cruz. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para ícones Lucide
+        lucide.createIcons();
+
+        // Script para menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Simulação de envio de formulário
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formStatus.textContent = 'Enviando...';
+            formStatus.classList.remove('text-red-300');
+            formStatus.classList.add('text-white/80');
+
+            // Simula um delay de rede
+            setTimeout(() => {
+                const name = document.getElementById('name').value;
+                if(name) {
+                    formStatus.textContent = `Obrigado, ${name}! Sua mensagem foi enviada com sucesso.`;
+                    contactForm.reset();
+                } else {
+                    formStatus.textContent = 'Por favor, preencha os campos.';
+                    formStatus.classList.add('text-red-300');
+                }
+                 setTimeout(() => { formStatus.textContent = ''; }, 5000);
+            }, 1000);
+        });
+
+    </script>
+</body>
+</html>
